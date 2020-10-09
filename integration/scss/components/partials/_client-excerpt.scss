@@ -1,0 +1,48 @@
+.client-excerpt {
+    $self: &;
+
+    min-height: 25vh;
+    padding: $gutter-extra-large $gutter $gutter;
+    position: relative;
+
+    &__title {
+        font-size: $font-size-large;
+        margin: {
+            bottom: $gutter;
+            top: $gutter;
+        };
+    }
+
+    &__image {
+        height: 6rem;
+        left: 50%;
+        position: absolute;
+        top: $gutter;
+        transform: translateX(-50%);
+    }
+
+    @include breakpoint-medium {
+        padding-top: $gutter;
+
+        &:nth-child(odd) {
+            padding-right: $gutter-extra-large;
+
+            #{$self}__image {
+                left: auto;
+                right: $gutter;
+                top: $gutter-large;
+                transform: inherit;
+            }
+        }
+
+        &:nth-child(even) {
+            padding-left: $gutter-extra-large;
+
+            #{$self}__image {
+                left: $gutter;
+                top: $gutter-large;
+                transform: inherit;
+            }
+        }
+    }
+}

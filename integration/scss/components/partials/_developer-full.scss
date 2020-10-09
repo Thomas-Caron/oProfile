@@ -1,0 +1,96 @@
+.developer-full {
+    background-color: $color-background-block;
+    padding: $gutter-large;
+
+    @include breakpoint-very-large {
+        display: grid;
+
+        grid: {
+            template: {
+                areas: "header content"
+                       "header comments";
+                columns: 50% 50%;
+                rows: auto;
+            }
+        };
+
+        &__header {
+            grid-area: header;
+        }
+
+        &__content {
+            grid-area: content;
+        }
+
+        &___comments {
+            grid-area: comments;
+        }
+    }
+
+    &__header {
+        background-color: $color-quaternary;
+        display: flex;
+        flex: {
+            direction: column;
+            wrap: wrap;
+        };
+        padding-bottom: $gutter;
+
+        .button {
+            align-self: center;
+            margin-top: $gutter-large;
+        }
+    }
+
+    &__content {
+        margin: $gutter-large;
+    }
+
+    &__name {
+        font: {
+            size: $font-size-very-large;
+            weight: 700;
+        };
+        margin-bottom: $gutter-large;
+    }
+
+    &__image {
+        object: {
+            fit: cover;
+            position: center top;
+        };
+        width: 100%;
+    }
+
+    &__job,
+    &__location {
+        padding: $gutter $gutter 0;
+        position: relative;
+        text-align: right;
+
+        &::before {
+            @include fa-icon;
+
+            position: absolute;
+            left: $gutter;
+        }
+    }
+
+    &__job {
+        font-size: $font-size-medium;
+
+        &::before {
+            content: $fa-var-graduation-cap;
+            font-size: $font-size;
+        }
+    }
+
+    &__location {
+        &::before {
+            content: $fa-var-location-arrow;
+
+        }
+    }
+
+
+}
