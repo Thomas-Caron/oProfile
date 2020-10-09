@@ -1,0 +1,113 @@
+@mixin breakpoint($size: 'medium') {
+    $breakpoint-min-width: $breakpoint-medium-min-width;
+
+    @if ($size == 'large') {
+        $breakpoint-min-width: $breakpoint-large-min-width;
+    } @else if ($size == 'very-large') {
+        $breakpoint-min-width: $breakpoint-very-large-min-width;
+    }
+
+    @media (min-width: $breakpoint-min-width) {
+        @content;
+    }
+}
+
+// Je factorise la media query pour le breakpoint medium avec un mixin
+@mixin breakpoint-medium {
+    // @media (min-width: $breakpoint-medium-min-width) {
+    @include breakpoint('medium') {
+        // Récupère le contenu associé au @include
+        @content;
+    }
+}
+
+@mixin breakpoint-large {
+    @include breakpoint('large') {
+        // Récupère le contenu associé au @include
+        @content;
+    }
+}
+
+@mixin breakpoint-very-large {
+    @include breakpoint('very-large') {
+        // Récupère le contenu associé au @include
+        @content;
+    }
+}
+
+
+@mixin block {
+    background-color: $color-background-block;
+
+    &__header {
+        border-bottom: {
+            color: $color-primary;
+            style: solid;
+            width: $border-width;
+        };
+        color: $color-tertiary;
+        font: {
+            size: $font-size-large;
+            weight: 700;
+        }
+        margin: {
+            bottom: $gutter-large;
+            left: $gutter-large;
+            right: $gutter-large;
+        }
+        padding: $gutter-large 0 $gutter-small;
+        width: 50%;
+    }
+}
+
+@mixin default-layout {
+    $header-height: 3rem;
+    $layout-row-gap: $gutter-large;
+
+    & {
+        background-color: $color-background;
+        display: grid;
+        grid: {
+            template: {
+                areas: "header"
+                    "main"
+                    "footer";
+                columns: auto;
+                rows: $header-height auto auto;
+            }
+        }
+        row-gap: $layout-row-gap;
+
+        @include breakpoint-very-large {
+
+            grid: {
+                template: {
+                    areas: "header header header"
+                        ". main ."
+                        "footer footer footer";
+                    columns: auto 1200px auto;
+                    rows: auto;
+                }
+            };
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        // .home .main {
+        .main {
+            grid-area: main;
+
+            .developer-full,
+            .skill-list {
+                margin-bottom: $gutter-large;
+            }
+        }
+
+        // .home .footer {
+        .footer {
+            grid-area: footer;
+        }
+    }
+}

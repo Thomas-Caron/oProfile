@@ -1,0 +1,39 @@
+$post-image-height: 75vh;
+
+.post-full {
+    @include block;
+
+    &__image {
+        max-height: $post-image-height;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &__meta {
+        padding: $gutter-large;
+    }
+
+    &__author,
+    &__date {
+        color: $color-primary;
+        text-decoration: none;
+        transition: color $duration;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+    &__text {
+        padding: 0 $gutter-large $gutter-large;
+
+        p {
+            line-height: $font-size-large;
+            margin-bottom: $gutter;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

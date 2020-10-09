@@ -1,0 +1,79 @@
+.button {
+    background-color: transparent;
+    border: $border-width solid $color-primary;
+    color: $color-primary;
+    font: {
+        size: $font-size;
+        weight: 700;
+    };
+    cursor: pointer;
+    font-size: $font-size;
+    // line-height: $font-size-large;
+    padding: $gutter-small $gutter;
+    text: {
+        decoration: none;
+        transform: uppercase;
+    };
+    transition: color $duration-fast,
+                border-color $duration-fast;
+
+    &::after {
+        // J'utilise le mixin de Font Awesome permettant à mon élément d'avoir le même style que les éléments avec la classe fa
+        @include fa-icon;
+
+        content: $fa-var-long-arrow-right;
+        margin-left: $gutter;
+        transition: margin-left $duration-slow;
+    }
+
+    &:hover {
+        border-color: $color-secondary;
+        color: $color-secondary;
+
+        &::after {
+            margin-left: $gutter-large;
+        }
+    }
+
+    &--previous {
+        &::after {
+            display: none;
+        }
+
+        &::before {
+            @include fa-icon;
+
+            content: $fa-var-long-arrow-left;
+            margin-right: $gutter;
+            transition: margin-right $duration-slow;
+        }
+
+        &:hover {
+            &::before {
+                margin-right: $gutter-large;
+            }
+        }
+    }
+
+    &--plus {
+        &::after {
+            content: $fa-var-plus;
+        }
+    }
+
+    &--delete {
+        border-color: $color-quinary;
+        color: $color-quinary;
+        &::after {
+            content: $fa-var-trash;
+        }
+    }
+
+    &--cancel {
+        border-color: $color-quinary;
+        color: $color-quinary;
+        &::after {
+            content: $fa-var-close;
+        }
+    }
+}
