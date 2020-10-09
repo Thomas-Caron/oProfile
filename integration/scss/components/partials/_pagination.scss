@@ -1,0 +1,17 @@
+.pagination {
+    display: flex;
+    flex: {
+        direction: column;
+        wrap: wrap;
+    };
+    padding: 0 $gutter-large;
+
+    @include breakpoint-large {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__link {
+        margin-bottom: $gutter-large;
+    }
+}
