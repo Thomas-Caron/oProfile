@@ -1,0 +1,118 @@
+.footer {
+    background-color: $color-tertiary;
+    color: $color-text-secondary;
+    padding: $gutter-large;
+
+    &__contact-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__contact-key {
+        font: {
+            size: $font-size-medium;
+            weight: 700;
+        }
+        margin-bottom: $gutter;
+        padding-left: $gutter-very-large;
+        position: relative;
+
+        &::before {
+            left: $gutter;
+            position: absolute;
+            top: 0;
+        }
+
+        &--email {
+            &::before {
+                @include fa-icon;
+
+                content: $fa-var-envelope;
+            }
+        }
+
+        &--phone {
+            &::before {
+                @include fa-icon;
+
+                content: $fa-var-phone;
+            }
+        }
+
+        &--address {
+            &::before {
+                @include fa-icon;
+
+                content: $fa-var-home;
+            }
+        }
+    }
+
+    &__contact-value {
+        border: {
+            bottom: {
+                color: $color-quaternary;
+                style: solid;
+                width: $border-width-tiny;
+            }
+        }
+        margin-bottom: $gutter;
+        padding: {
+            bottom: $gutter;
+            left: $gutter-very-large;
+        };
+
+        &:nth-last-of-type(1) {
+            border-bottom: none;
+        }
+    }
+
+    .menu {
+        margin-bottom: $gutter-large;
+
+        &__link {
+            color: $color-text-secondary;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @include breakpoint-large {
+        display: flex;
+        flex: {
+            direction: row;
+            wrap: wrap;
+        };
+
+        .footer__contact-list {
+            border-left: {
+                color: $color-quaternary;
+                style: solid;
+                width: $border-width-tiny;
+            };
+            order: 2;
+            width: 50%;
+        }
+
+        .menu:nth-of-type(1) {
+            order: 1;
+            padding-left: $gutter-large;
+            width: 50%;
+
+            .menu__item {
+                font-size: $font-size-medium;
+                margin-bottom: $gutter-large;
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+        .menu:last-child {
+            margin-top: $gutter-large;
+            order: 3;
+            width: 100%;
+        }
+    }
+}

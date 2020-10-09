@@ -1,0 +1,64 @@
+.carousel {
+    position: relative;
+    margin: 0 $gutter-large;
+
+    &__header {
+        font: {
+            size: $font-size-medium;
+            weight: 700;
+        };
+        margin-bottom: $gutter-large;
+    }
+
+    &__content {
+        // align-items: center;
+        display: flex;
+        flex: {
+            direction: row;
+            wrap: nowrap;
+        }
+        overflow: hidden;
+        scroll-behavior: smooth;
+
+        > * {
+            // flex: 0 0 100%;
+            flex: {
+                // pas d'expansion
+                grow: 0;
+                // pas de rétrécissement
+                shrink: 0;
+                // taille de base
+                basis: 100%;
+            };
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: $gutter $gutter-very-large;
+
+        > * {
+            background-color: $color-primary;
+            border: none;
+            cursor: pointer;
+            flex: {
+                basis: auto;
+                grow: 1;
+                shrink: 1;
+            };
+            height: ($font-size / 3);
+            margin-right: $gutter;
+            transition: background-color $duration;
+
+            &:hover {
+                background-color: $color-secondary;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
