@@ -1,0 +1,2 @@
+# On bloque l'accès HTTP au dossier (attention, si votre plugin contient des assets, il ne faut pas mettre de htaccess)
+Deny from all

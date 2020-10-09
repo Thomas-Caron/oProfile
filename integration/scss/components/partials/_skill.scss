@@ -1,0 +1,48 @@
+.skill {
+    background-color: $color-background;
+    padding: $gutter-large;
+    position: relative;
+
+    &__title {
+        font: {
+            size: $font-size-medium;
+            weight: 700;
+        };
+        margin-bottom: $gutter-large;
+    }
+
+    &__description {
+        display: none;
+        margin-top: $gutter-large;
+        transition: transform $duration;
+
+        @include breakpoint-large {
+            display: block;
+        }
+
+        &.visible {
+            display: block;
+        }
+    }
+
+    &__icon {
+        background-color: $color-primary;
+        border-radius: .25rem;
+        color: $color-text-secondary;
+        font-size: $font-size-medium;
+        height: $font-size-very-large;
+        line-height: $font-size-very-large;
+        position: absolute;
+        right: $gutter-large;
+        text-align: center;
+        top: $gutter-large;
+        width: $font-size-very-large;
+        z-index: 1;
+    }
+
+    @include breakpoint-large {
+        .button {
+            display: none;
+        }
+    }
+}

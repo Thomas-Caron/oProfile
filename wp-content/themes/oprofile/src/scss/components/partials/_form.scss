@@ -1,0 +1,34 @@
+.form {
+    @include block;
+
+    &__content {
+        padding: 0 $gutter-large $gutter-large;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $gutter;
+    }
+
+    &__error {
+        border: $border-width-tiny solid $color-quinary;
+        color: $color-quinary;
+        margin-bottom: $gutter;
+        padding: $gutter-small $gutter;
+    }
+
+    &__label {
+        margin-bottom: $gutter-small;
+    }
+
+    &__control {
+        background-color: $color-text-secondary;
+        margin-bottom: $gutter;
+        padding: $gutter-small $gutter;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
