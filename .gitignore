@@ -1,0 +1,27 @@
+# Composer vendor
+vendor
+
+# WordPress
+wp
+wordpress
+
+# WordPress configuration
+wp-config.php
+
+# WordPress Themes
+wp-content/themes/twentytwenty
+
+# WordPress Plugins
+wp-content/plugins/akismet
+wp-content/plugins/query-monitor
+wp-content/plugins/advanced-custom-fields
+wp-content/plugins/wordpress-seo
+
+# WordPress translations
+wp-content/languages
+
+# WordPress medias
+wp-content/uploads
+
+# Query Monitor
+wp-content/db.php

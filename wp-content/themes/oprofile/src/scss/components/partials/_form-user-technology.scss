@@ -1,0 +1,20 @@
+.form-user-technology {
+    &__fieldset {
+        padding-bottom: $gutter-large;
+    }
+
+    &__group {
+        border-bottom: $border-width-small solid $color-primary;
+        margin-bottom: $gutter;
+        padding: $gutter;
+        transition: background-color $duration-fast;
+
+        &.new {
+            background-color: lighten($color-secondary, 25%);
+        }
+    }
+
+    .button--delete {
+        align-self: center;
+    }
+}

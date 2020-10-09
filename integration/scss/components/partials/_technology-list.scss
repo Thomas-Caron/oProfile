@@ -1,0 +1,9 @@
+.technology-list {
+    @include block;
+
+    &__content {
+        > *:nth-child(odd) {
+            background-color: $color-quaternary;
+        }
+    }
+}
