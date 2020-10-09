@@ -1,0 +1,30 @@
+$header-height: 3rem;
+$layout-row-gap: $gutter-large;
+
+.developer {
+    display: grid;
+    grid: {
+        template: {
+            areas: "header"
+                   "main"
+                   "footer";
+            columns: auto;
+            rows: $header-height auto auto;
+        }
+    }
+    row-gap: $layout-row-gap;
+
+    .header {
+        grid-area: header;
+    }
+
+    // .home .main {
+    .main {
+        grid-area: main;
+    }
+
+    // .home .footer {
+    .footer {
+        grid-area: footer;
+    }
+}

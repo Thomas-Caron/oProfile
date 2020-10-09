@@ -1,0 +1,63 @@
+$text-color: $color-text-secondary;
+
+$title-font-size: 2rem;
+$title-width: 50%;
+
+$content-width: $title-width;
+
+.banner {
+    background: {
+        image: url(https://picsum.photos/800/1000);
+        size: cover;
+    };
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    padding: ($gutter-large * 5) $gutter-large;
+    z-index: 0;
+
+    // .banner__title
+    &__title {
+        font-size: $title-font-size;
+        margin-bottom: $gutter-large;
+        width: $title-width;
+    }
+
+    // .banner__content
+    &__content {
+        margin-bottom: $gutter-large;
+        width: $content-width;
+    }
+
+    // .banner__actions
+    &__actions {
+        display: flex;
+        flex: {
+            direction: row;
+            wrap: wrap;
+        }
+
+        > * {
+            margin: {
+                bottom: $gutter;
+                right: $gutter;
+            }
+        }
+    }
+
+    &::after {
+        background: linear-gradient(
+            to right,
+            // https://sass-lang.com/documentation/modules#rgba
+            rgba($color-text-primary, .50),
+            rgba($color-text-primary, .25) 50%,
+            transparent);
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+}

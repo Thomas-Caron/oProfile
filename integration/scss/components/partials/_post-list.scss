@@ -1,0 +1,39 @@
+.post-list {
+    &__header {
+        border-bottom: {
+            color: $color-primary;
+            style: solid;
+            width: $border-width;
+        };
+        color: $color-tertiary;
+        font: {
+            size: $font-size-large;
+            weight: 700;
+        }
+        margin: $gutter-large;
+        padding-bottom: $gutter-small;
+        width: 50%;
+    }
+
+    &__content {
+        display: flex;
+        flex: {
+            direction: row;
+            wrap: wrap;
+        };
+
+        > * {
+            width: 100%;
+
+            // @media (min-width: 500px) {
+            // .post-list__content > * {
+            @include breakpoint('medium') {
+                width: 50%;
+            }
+
+            @include breakpoint-large {
+                width: (100% / 3);
+            }
+        }
+    }
+}

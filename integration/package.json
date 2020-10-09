@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "sass": "^1.26.8"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "reset-css": "^5.0.1"
+  }
+}

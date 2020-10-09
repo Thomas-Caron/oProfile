@@ -1,0 +1,17 @@
+.client-list {
+    &__header {
+        border-bottom: {
+            color: $color-primary;
+            style: solid;
+            width: $border-width;
+        };
+        color: $color-tertiary;
+        font: {
+            size: $font-size-large;
+            weight: 700;
+        }
+        margin: $gutter-large;
+        padding-bottom: $gutter-small;
+        width: 50%;
+    }
+}

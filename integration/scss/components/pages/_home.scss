@@ -1,0 +1,61 @@
+$banner-height: 100vh;
+$layout-row-gap: $gutter-large; // 2rem
+
+// @debug $layout-row-gap;
+
+/*
+Un commentaire visible
+*/
+.home {
+    display: grid;
+    grid: {
+        template: {
+            // grid-template-areas:
+            areas: "banner"
+                   "main"
+                   "footer";
+            // grid-template-columns:
+            columns: auto;
+            // grid-template-rows
+            rows: $banner-height auto auto;
+        }
+    }
+    row-gap: $layout-row-gap;
+
+    .header {
+        grid: {
+            column: {
+                end: 2;
+                start: 1;
+            }
+            row: {
+                end: 2;
+                start: 1;
+            }
+        }
+        /*
+        grid-column-end: 2;
+        grid-column-start: 1;
+        grid-row-end: 2;
+        grid-row-start: 1;
+        */
+        height: 4rem;
+        z-index: 1;
+    }
+
+    // Avec Sass, je peux mettre des sous-sélecteurs qui reprendront le sélecteur parent
+    // .home .banner {
+    .banner {
+        grid-area: banner;
+    }
+
+    // .home .main {
+    .main {
+        grid-area: main;
+    }
+
+    // .home .footer {
+    .footer {
+        grid-area: footer;
+    }
+}

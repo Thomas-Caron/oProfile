@@ -1,0 +1,88 @@
+// Je déclare une liste de couleurs de fond à partir de variables définies plus tôt
+$background-color-list: $color-primary,
+                        $color-secondary,
+                        $color-quinary,
+                        $color-senary,
+                        $color-septenary,
+                        $color-octonary;
+
+.post-excerpt {
+    min-height: 50vh;
+    padding: $gutter-very-large $gutter-large;
+    position: relative;
+
+    &__header {
+        border: {
+            bottom: {
+                color: $color-text-secondary;
+                style: solid;
+                width: $border-width;
+            }
+        }
+        color: $color-text-secondary;
+        margin-bottom: $gutter-large;
+        padding-bottom: $gutter-small;
+        text-transform: uppercase;
+    }
+
+    &__content {
+        color: $color-text-secondary;
+        line-height: $font-size-large;
+    }
+
+    &__image {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -2;
+    }
+
+    &__footer {
+        padding: $gutter-large 0;
+
+        .button,
+        .button:hover {
+            border-color: $color-text-secondary;
+            color: $color-text-secondary;
+        }
+    }
+
+    &::after {
+        background-color: $color-primary;
+        bottom: 0;
+        left: 0;
+        content: '';
+        opacity: .5;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: background-color $duration-fast;
+        z-index: -1;
+    }
+
+    &:hover {
+        // .post-excerpt:hover::after
+        &::after {
+            background-color: $color-text-primary;
+        }
+    }
+
+    // Je boucle sur tous les éléments de la liste
+    $background-color-list-length: length($background-color-list);
+
+    @for $index from 1 through $background-color-list-length {
+        // #{} permet d'utiliser des variables dans un sélecteur
+        &:nth-child(#{$background-color-list-length}n + #{$index}) {
+            &::after {
+                // Je récupère un élément de la liste à partir de son index (équivalent PHP $backgroundColorList[$index]);
+                background-color: nth(
+                    $background-color-list,
+                    $index
+                );
+            }
+        }
+    }
+}

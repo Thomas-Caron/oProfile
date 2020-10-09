@@ -1,0 +1,18 @@
+$header-background-color: #333;
+
+.header {
+    background-color: $header-background-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $gutter;
+
+    .menu__link,
+    .main-menu-action {
+        color: $color-text-secondary;
+    }
+
+    &--transparent {
+        background-color: transparent;
+    }
+}

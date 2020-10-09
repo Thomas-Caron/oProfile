@@ -1,0 +1,40 @@
+.footer {
+    background-color: $color-tertiary;
+    color: $color-text-secondary;
+    padding: $gutter-large;
+
+    &__contact-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__contact-key {
+        font: {
+            size: $font-size-medium;
+            weight: 700;
+        }
+        margin-bottom: $gutter;
+        padding-left: $gutter-very-large;
+    }
+
+    &__contact-value {
+        border: {
+            bottom: {
+                color: $color-quaternary;
+                style: solid;
+                width: $border-width-tiny;
+            }
+        }
+        margin-bottom: $gutter;
+        padding: {
+            bottom: $gutter;
+            left: $gutter-very-large;
+        };
+    }
+
+    .menu {
+        &__link {
+            color: $color-text-secondary;
+        }
+    }
+}

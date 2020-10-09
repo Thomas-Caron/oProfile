@@ -1,0 +1,28 @@
+.menu {
+    &__list {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    &__item {
+        padding: 0 $gutter;
+        position: relative;
+
+        &::after {
+            color: $color-text-secondary;
+            content: '/';
+            position: absolute;
+            right: 0;
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+}
