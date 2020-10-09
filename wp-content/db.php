@@ -1,0 +1,1 @@
+/var/www/html/cours/fantasy/wordpress/oprofile/wp-content/plugins/query-monitor/wp-content/db.php

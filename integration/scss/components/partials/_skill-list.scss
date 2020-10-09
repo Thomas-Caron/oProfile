@@ -1,0 +1,47 @@
+.skill-list {
+    @include block;
+
+    &__content {
+        display: flex;
+        flex: {
+            direction: row;
+            wrap: wrap;
+        };
+
+        > * {
+            $border-color: darken($color-background, 20%);
+
+            border: {
+                color: $border-color;
+                style: solid;
+                top: none;
+                width: $border-width-tiny;
+            };
+            width: 100%;
+
+            &:first-child {
+                border-top: {
+                    color: $border-color;
+                    style: solid;
+                    width: $border-width-tiny;
+                }
+            }
+
+            @include breakpoint-large {
+                width: 50%;
+
+                &:nth-child(2) {
+                    border-top: {
+                        color: $border-color;
+                        style: solid;
+                        width: $border-width-tiny;
+                    };
+                }
+
+                &:nth-child(odd):not(:last-child) {
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
