@@ -1,0 +1,47 @@
+// 1. Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Dependencies
+@import '../node_modules/reset-css/sass/reset';
+
+// Je configure le chemin vers le dossier des fichiers de la police de caractères Font Awesome
+$fa-font-path: '../node_modules/font-awesome/fonts';
+@import '../node_modules/font-awesome/scss/font-awesome';
+
+// 3. Base
+@import 'base/base';
+
+// 3. Layout
+@import 'components/layout/header',
+        'components/layout/banner',
+        'components/layout/main',
+        'components/layout/footer',
+        'components/layout/overlay';
+
+// 4. Partials
+@import 'components/partials/button',
+        'components/partials/carousel',
+        'components/partials/client-excerpt',
+        'components/partials/client-list',
+        'components/partials/comment-form',
+        'components/partials/comment-list',
+        'components/partials/comment.scss',
+        'components/partials/developer-full',
+        'components/partials/logo',
+        'components/partials/main-menu-action',
+        'components/partials/menu',
+        'components/partials/pagination',
+        'components/partials/post-excerpt',
+        'components/partials/post-full',
+        'components/partials/post-list',
+        'components/partials/skill-list',
+        'components/partials/skill',
+        'components/partials/technology-list',
+        'components/partials/technology';
+
+// 5. Pages
+@import 'components/pages/archive',
+        'components/pages/developer',
+        'components/pages/home',
+        'components/pages/post';

@@ -1,0 +1,35 @@
+.post-list {
+    @include block;
+
+    &__content {
+        display: flex;
+        flex: {
+            direction: row;
+            wrap: wrap;
+        };
+        position: relative;
+        z-index: 0;
+
+        > * {
+            width: 100%;
+
+            // @media (min-width: 500px) {
+            // .post-list__content > * {
+            @include breakpoint('medium') {
+                width: 50%;
+            }
+
+            @include breakpoint-large {
+                &:nth-child(4n + 2),
+                &:nth-child(4n + 3) {
+                    width: 52.5%;
+                }
+
+                &:nth-child(4n + 1),
+                &:nth-child(4n + 4) {
+                    width: 47.5%;
+                }
+            }
+        }
+    }
+}
