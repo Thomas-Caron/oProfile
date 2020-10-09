@@ -1,0 +1,47 @@
+.menu {
+    &__list {
+        align-items: center;
+        display: flex;
+        flex: {
+            direction: row;
+            wrap: wrap;
+        };
+        justify-content: center;
+    }
+
+    &__item {
+        padding: 0 $gutter;
+        position: relative;
+
+        &:last-child::after {
+            display: none;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+
+    &--two-columns {
+        .menu__item {
+            margin-bottom: $gutter;
+            text-align: center;
+            width: 50%;
+        }
+
+        .menu__link {
+            text-decoration: underline;
+        }
+    }
+
+    &--with-separator {
+        .menu__item {
+            &::after {
+                color: $color-text-secondary;
+                content: '/';
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+}

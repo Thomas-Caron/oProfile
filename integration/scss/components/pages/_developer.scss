@@ -1,0 +1,49 @@
+$header-height: 3rem;
+$layout-row-gap: $gutter-large;
+
+.developer {
+    background-color: $color-background;
+    display: grid;
+    grid: {
+        template: {
+            areas: "header"
+                   "main"
+                   "footer";
+            columns: auto;
+            rows: $header-height auto auto;
+        }
+    }
+    row-gap: $layout-row-gap;
+
+    @include breakpoint-very-large {
+
+        grid: {
+            template: {
+                areas: "header header header"
+                       ". main ."
+                       "footer footer footer";
+                columns: auto 1200px auto;
+                rows: auto;
+            }
+        };
+    }
+
+    .header {
+        grid-area: header;
+    }
+
+    // .home .main {
+    .main {
+        grid-area: main;
+
+        .developer-full,
+        .skill-list {
+            margin-bottom: $gutter-large;
+        }
+    }
+
+    // .home .footer {
+    .footer {
+        grid-area: footer;
+    }
+}

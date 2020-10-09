@@ -1,0 +1,31 @@
+.button {
+    border: $border-width solid $color-primary;
+    color: $color-primary;
+    font-weight: 700;
+    line-height: $font-size-large;
+    padding: $gutter-small $gutter;
+    text: {
+        decoration: none;
+        transform: uppercase;
+    };
+    transition: color $duration-fast,
+                border-color $duration-fast;
+
+    &::after {
+        // J'utilise le mixin de Font Awesome permettant à mon élément d'avoir le même style que les éléments avec la classe fa
+        @include fa-icon;
+
+        content: $fa-var-long-arrow-right;
+        margin-left: $gutter;
+        transition: margin-left $duration-slow;
+    }
+
+    &:hover {
+        border-color: $color-secondary;
+        color: $color-secondary;
+
+        &::after {
+            margin-left: $gutter-large;
+        }
+    }
+}

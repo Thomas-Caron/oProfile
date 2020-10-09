@@ -1,0 +1,6 @@
+# J'ignore les dossiers générés par Parcel
+.cache
+dist
+
+# J'ignore le dossier des dépendances installées avec NPM (ou Parcel) (équivalent au dossier vendor de composer)
+node_modules
