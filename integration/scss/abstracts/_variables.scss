@@ -1,0 +1,44 @@
+// Breakpoints
+$breakpoint-medium-min-width: 500px;
+$breakpoint-large-min-width: 800px;
+$breakpoint-very-large-min-width: 1200px;
+
+// Bordures
+$border-width: .25rem;
+$border-width-large: ($border-width * 2);
+$border-width-small: ($border-width / 2);
+$border-width-tiny: ($border-width-small / 2);
+
+// Couleurs
+$color-primary: #6fb4fd;
+$color-secondary: #8d82c4;
+$color-tertiary: #242943;
+$color-quaternary: #ebf0fb;
+$color-quinary: #e56555;
+$color-senary:#de9d5e;
+$color-septenary: #6489df;
+$color-octonary: #65b48a;
+
+$color-background: #e7e7e7;
+$color-background-block: #fff;
+
+$color-text-primary: #000;
+$color-text-secondary: #fff;
+
+// Durées
+$duration: .5s;
+$duration-fast: $duration / 2;
+$duration-slow: $duration * 2;
+
+// Espacements
+$gutter: 1rem;
+$gutter-large: $gutter * 2; // 2rem
+$gutter-small: $gutter / 2; // 0.5rem
+$gutter-very-large: $gutter-large * 2;
+$gutter-extra-large: $gutter-very-large * 2;
+
+// Police
+$font-size: 1rem;
+$font-size-medium: $font-size * 1.25;
+$font-size-large: $font-size * 1.5;
+$font-size-very-large: $font-size * 2;

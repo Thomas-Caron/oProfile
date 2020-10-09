@@ -1,0 +1,15 @@
+.block {
+    @include block;
+
+    &__content {
+        padding: 0 $gutter-large $gutter-large;
+
+        * {
+            margin-bottom: $gutter;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

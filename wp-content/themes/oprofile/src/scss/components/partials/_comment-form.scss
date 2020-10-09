@@ -1,0 +1,19 @@
+$comment-form-message-height: 10rem;
+
+.comment-form {
+    @include block;
+
+    &__message {
+        height: $comment-form-message-height;
+        margin: 0 $gutter-large $gutter-large;
+        resize: vertical;
+        width: calc(100% - (#{$gutter-large} * 2));
+    }
+
+    &__submit {
+        margin: {
+            bottom: $gutter-large;
+            left: $gutter-large;
+        };
+    }
+}

@@ -1,0 +1,9 @@
+.single,
+.page:not(.home) {
+    @include default-layout;
+
+    .post-full,
+    .comment-list {
+        margin-bottom: $gutter-large;
+    }
+}

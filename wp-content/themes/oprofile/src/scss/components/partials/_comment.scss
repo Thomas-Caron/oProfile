@@ -1,0 +1,11 @@
+.comment {
+    padding: $gutter-large;
+
+    &__content {
+        margin-bottom: $gutter;
+    }
+
+    &:nth-child(odd) {
+        background-color: $color-quaternary;
+    }
+}
